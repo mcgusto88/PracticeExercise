@@ -18,7 +18,7 @@ class InfoDetailViewController2: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         detailListTblview.delegate = self
         detailListTblview.dataSource = self
-        detailListTblview.estimatedRowHeight = 500
+        detailListTblview.estimatedRowHeight = 100
         makeNetworkCall()
         // Do any additional setup after loading the view.
     }
@@ -54,10 +54,10 @@ class InfoDetailViewController2: UIViewController, UITableViewDataSource, UITabl
                     return UITableViewCell()
             }
             let detailInfo = todoArray[indexPath.row]
-            cell.userIdLbl.text = String(detailInfo.userId)
-            cell.todoIdLbl.text = String(detailInfo.id)
-            cell.titleLbl.text = detailInfo.title
-            cell.completedLbl.text = String(detailInfo.completed)
+            cell.userIdLbl.text = "userId: \(detailInfo.userId)"
+            cell.todoIdLbl.text = "id: \(detailInfo.id)"
+            cell.titleLbl.text = "title: \(detailInfo.title)"
+            cell.completedLbl.text = "completed: \(detailInfo.completed)"
             return cell
         }
         
